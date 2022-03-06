@@ -25,7 +25,7 @@ const initState = {
 }
 
 export default function App() {
-  return <Player src={["http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4"]} />
+  return <Player src={["https://animescrape-proxy.herokuapp.com/https://server13.streamingaw.online/DDL/ANIME/ShuumatsuNoWalkure/ShuumatsuNoWalkure_Ep_01_SUB_ITA.mp4"]} />
 }
 
 function Player({ src = [], handleNextPrevEpisode, color = "#0BA4E8", title = "Titolo anime - Episodio 1" }) {
@@ -180,7 +180,9 @@ function Player({ src = [], handleNextPrevEpisode, color = "#0BA4E8", title = "T
       onKeyPress={(e) => handleKey(e.key)}>
       <video
         ref={video}
+        style={{objectFit: 'fill'}}
         width='100%'
+        height='100%'
         controls={false}
         onTimeUpdate={(e) => {
           setCurrentTime(isNaN(e.target.currentTime) ? 0 : e.target.currentTime);
